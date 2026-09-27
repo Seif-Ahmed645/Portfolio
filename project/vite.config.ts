@@ -5,7 +5,7 @@ import { fileURLToPath, URL } from 'node:url';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Portfolio/', // <--- ضيف السطر ده هنا
+  base: './', // <--- خليها نقطة وشرطة بدل '/Portfolio/' عشان تقرا من أي مسار صح وما تضربش 404
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
