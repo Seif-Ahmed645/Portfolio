@@ -1,11 +1,8 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Award, Eye, GraduationCap, Database, Globe, Calendar } from 'lucide-react';
+import { Eye, GraduationCap, Database, Globe, Calendar } from 'lucide-react';
 import { SectionHeading } from '@/components/SectionHeading';
 import { TiltCard } from '@/components/TiltCard';
 import { Lightbox } from '@/components/Lightbox';
-
-const BASE_URL = import.meta.env.BASE_URL;
 
 const CERTIFICATES = [
   {
@@ -13,7 +10,7 @@ const CERTIFICATES = [
     org: 'Route Training Center',
     period: 'Nov 2025 — Mar 2026',
     description: 'C++, Java, OOP, Data Structures, SQL',
-    image: `${BASE_URL}route_certificate.jpg`,
+    image: '/Portfolio/route_certificate.jpg',
     icon: GraduationCap,
     accent: 'from-violet-400 to-violet-600',
     glow: 'rgba(139,92,246,0.15)',
@@ -23,7 +20,7 @@ const CERTIFICATES = [
     org: 'Coursera / IBM',
     period: '2026',
     description: 'Python, SQL, Data Analysis, Machine Learning, Jupyter',
-    image: `${BASE_URL}ibm_certificate.jpg`,
+    image: '/Portfolio/ibm_certificate.jpg',
     icon: Database,
     accent: 'from-blue-400 to-indigo-600',
     glow: 'rgba(59,130,246,0.15)',
@@ -33,7 +30,7 @@ const CERTIFICATES = [
     org: 'Goethe-Institut',
     period: 'German Language Certificate',
     description: 'A1 level German language proficiency',
-    image: `${BASE_URL}german_a1_certificate.jpg`,
+    image: '/Portfolio/german_a1_certificate.jpg',
     icon: Globe,
     accent: 'from-coral-400 to-coral-500',
     glow: 'rgba(251,146,60,0.15)',
@@ -43,7 +40,7 @@ const CERTIFICATES = [
     org: 'DEPI Scholarship',
     period: 'Jul 2026 — Ongoing',
     description: 'Python, SQL, Data Analysis, Machine Learning',
-    image: `${BASE_URL}depi_certificate.jpg`,
+    image: '/Portfolio/depi_certificate.jpg',
     icon: Database,
     accent: 'from-violet-400 to-violet-600',
     glow: 'rgba(139,92,246,0.15)',
@@ -53,10 +50,14 @@ const CERTIFICATES = [
 export function Certificates() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const activeCert = openIndex !== null ? CERTIFICATES[openIndex] : null;
+  const activeCert =
+    openIndex !== null ? CERTIFICATES[openIndex] : null;
 
   return (
-    <section id="certificates" className="section-pad relative overflow-hidden">
+    <section
+      id="certificates"
+      className="section-pad relative overflow-hidden"
+    >
       <div className="absolute inset-0 dot-overlay opacity-30 pointer-events-none" />
 
       <div className="ambient-orb w-80 h-80 bg-violet-500 top-1/3 left-1/4 animate-orb-float" />
@@ -87,6 +88,7 @@ export function Certificates() {
               className="group rounded-2xl glass-strong border border-violet-500/10 overflow-hidden"
             >
               <button
+                type="button"
                 onClick={() => setOpenIndex(i)}
                 className="w-full text-left"
               >
@@ -103,9 +105,6 @@ export function Certificates() {
                       src={cert.image}
                       alt={cert.title}
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                      }}
                     />
                   </div>
 
