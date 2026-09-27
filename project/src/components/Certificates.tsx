@@ -5,13 +5,19 @@ import { SectionHeading } from '@/components/SectionHeading';
 import { TiltCard } from '@/components/TiltCard';
 import { Lightbox } from '@/components/Lightbox';
 
+// دالة بسيطة لضبط مسار الصورة مع الـ Base URL تلقائياً
+const getAssetPath = (path: string) => {
+  const base = import.meta.env.BASE_URL || '/';
+  return `${base}${path.startsWith('/') ? path.slice(1) : path}`;
+};
+
 const CERTIFICATES = [
   {
     title: 'Programming Fundamentals Diploma',
     org: 'Route Training Center',
     period: 'Nov 2025 — Mar 2026',
     description: 'C++, Java, OOP, Data Structures, SQL',
-    image: 'route_certificate.jpg',
+    image: getAssetPath('route_certificate.jpg'),
     icon: GraduationCap,
     accent: 'from-violet-400 to-violet-600',
     glow: 'rgba(139,92,246,0.15)',
@@ -21,7 +27,7 @@ const CERTIFICATES = [
     org: 'Coursera / IBM',
     period: '2026',
     description: 'Python, SQL, Data Analysis, Machine Learning, Jupyter',
-    image: 'ibm_certificate.jpg',
+    image: getAssetPath('ibm_certificate.jpg'),
     icon: Database,
     accent: 'from-blue-400 to-indigo-600',
     glow: 'rgba(59,130,246,0.15)',
@@ -31,7 +37,7 @@ const CERTIFICATES = [
     org: 'Goethe-Institut',
     period: 'German Language Certificate',
     description: 'A1 level German language proficiency',
-    image: 'german_a1_certificate.jpg',
+    image: getAssetPath('german_a1_certificate.jpg'),
     icon: Globe,
     accent: 'from-coral-400 to-coral-500',
     glow: 'rgba(251,146,60,0.15)',
@@ -41,7 +47,7 @@ const CERTIFICATES = [
     org: 'DEPI Scholarship',
     period: 'Jul 2026 — Ongoing',
     description: 'Python, SQL, Data Analysis, Machine Learning',
-    image: 'depi_certificate.jpg',
+    image: getAssetPath('depi_certificate.jpg'),
     icon: Database,
     accent: 'from-violet-400 to-violet-600',
     glow: 'rgba(139,92,246,0.15)',
