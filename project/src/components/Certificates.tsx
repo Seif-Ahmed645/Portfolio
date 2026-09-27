@@ -5,10 +5,11 @@ import { SectionHeading } from '@/components/SectionHeading';
 import { TiltCard } from '@/components/TiltCard';
 import { Lightbox } from '@/components/Lightbox';
 
-// دالة بسيطة لضبط مسار الصورة مع الـ Base URL تلقائياً
+// دالة ذكية وموحدة لضبط المسار مع Vite Base URL تلقائياً
 const getAssetPath = (path: string) => {
   const base = import.meta.env.BASE_URL || '/';
-  return `${base}${path.startsWith('/') ? path.slice(1) : path}`;
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return base.endsWith('/') ? `${base}${cleanPath}` : `${base}/${cleanPath}`;
 };
 
 const CERTIFICATES = [
