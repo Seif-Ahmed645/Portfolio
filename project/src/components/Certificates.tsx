@@ -21,7 +21,7 @@ const CERTIFICATES = [
     org: 'Coursera / IBM',
     period: '2026',
     description: 'Python, SQL, Data Analysis, Machine Learning, Jupyter',
-    image: 'ibm_certificate.jpg',
+    image: './ibm_certificate.jpg',
     icon: Database,
     accent: 'from-blue-400 to-indigo-600',
     glow: 'rgba(59,130,246,0.15)',
