@@ -1,22 +1,47 @@
 import { motion } from 'framer-motion';
-import { Code2, Users } from 'lucide-react';
+import { Code2, Users, Globe } from 'lucide-react';
 import { SectionHeading } from '@/components/SectionHeading';
 
 const TECH_SKILLS = ['Python', 'SQL', 'C++', 'Java', 'C', 'HTML', 'CSS', 'JavaScript', 'Git', 'GitHub', 'OOP', 'Data Structures', 'Databases'];
-const SOFT_SKILLS = ['Teamwork', 'Problem Solving', 'Time Management', 'Communication', 'CV Writing', 'LinkedIn Optimization', 'Arabic (Native)', 'English (B1)', 'German (A1)'];
+const SOFT_SKILLS = ['Teamwork', 'Problem Solving', 'Time Management', 'Communication', 'CV Writing', 'LinkedIn Optimization'];
+const LANGUAGES = ['Arabic (Native)', 'English (B1)', 'German (A1)'];
 
-function SkillPill({ name, index, isCoral }: { name: string; index: number; isCoral?: boolean }) {
+function SkillPill({ name, index, isCoral, isGreen }: { name: string; index: number; isCoral?: boolean; isGreen?: boolean }) {
   return (
     <motion.span
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="group relative inline-flex items-center gap-2 px-4 py-2.5 rounded-xl glass border border-violet-500/10 text-sm font-medium text-slate-400 hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-default"
-      style={isCoral ? { borderColor: 'rgba(251,146,60,0.1)' } : undefined}
+      className="group relative inline-flex items-center gap-2 px-4 py-2.5 rounded-xl glass border text-sm font-medium text-slate-400 hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-default"
+      style={
+        isGreen 
+          ? { borderColor: 'rgba(34,197,94,0.1)' } 
+          : isCoral 
+          ? { borderColor: 'rgba(251,146,60,0.1)' } 
+          : { borderColor: 'rgba(139,92,246,0.1)' }
+      }
     >
-      <span className={`h-1.5 w-1.5 rounded-full ${isCoral ? 'bg-coral-400/50 group-hover:bg-coral-400' : 'bg-violet-500/40 group-hover:bg-violet-400'} transition-colors duration-300`} />
-      <span className={`group-hover:${isCoral ? 'text-coral-400' : 'text-violet-400'} transition-colors duration-300`}>{name}</span>
+      <span 
+        className={`h-1.5 w-1.5 rounded-full ${
+          isGreen 
+            ? 'bg-emerald-400/50 group-hover:bg-emerald-400' 
+            : isCoral 
+            ? 'bg-coral-400/50 group-hover:bg-coral-400' 
+            : 'bg-violet-500/40 group-hover:bg-violet-400'
+        } transition-colors duration-300`} 
+      />
+      <span 
+        className={`group-hover:${
+          isGreen 
+            ? 'text-emerald-400' 
+            : isCoral 
+            ? 'text-coral-400' 
+            : 'text-violet-400'
+        } transition-colors duration-300`}
+      >
+        {name}
+      </span>
     </motion.span>
   );
 }
@@ -35,7 +60,10 @@ export function Skills() {
           subtitle="A comprehensive toolkit spanning programming, data, and professional services — continuously growing."
         />
 
-        <div className="mt-16 grid lg:grid-cols-2 gap-6">
+        {/* تم تغيير الـ Grid هنا ليصبح 3 أعمدة بدل 2 عشان يستوعب المربع التالت بشكل متناسق */}
+        <div className="mt-16 grid lg:grid-cols-3 gap-6">
+          
+          {/* 1. Technical Stack */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -57,6 +85,7 @@ export function Skills() {
             </div>
           </motion.div>
 
+          {/* 2. Soft & Professional Capabilities */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -69,14 +98,37 @@ export function Skills() {
                 <Users className="h-5 w-5 text-coral-400" />
               </div>
               <div>
-                <h3 className="font-display text-lg font-bold text-white-primary">Soft & Professional Capabilities</h3>
-                <p className="text-xs text-slate-500 font-mono">// communication & professional services</p>
+                <h3 className="font-display text-lg font-bold text-white-primary">Soft Skills</h3>
+                <p className="text-xs text-slate-500 font-mono">// communication & professional</p>
               </div>
             </div>
             <div className="flex flex-wrap gap-2.5">
               {SOFT_SKILLS.map((skill, i) => <SkillPill key={skill} name={skill} index={i} isCoral />)}
             </div>
           </motion.div>
+
+          {/* 3. Languages (المربع الجديد) */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="rounded-2xl glass-strong border border-violet-500/10 p-6 sm:p-8 lg:col-span-1"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-11 w-11 rounded-xl bg-emerald-400/10 border border-emerald-400/20 flex items-center justify-center">
+                <Globe className="h-5 w-5 text-emerald-400" />
+              </div>
+              <div>
+                <h3 className="font-display text-lg font-bold text-white-primary">Languages</h3>
+                <p className="text-xs text-slate-500 font-mono">// spoken & written</p>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-2.5">
+              {LANGUAGES.map((skill, i) => <SkillPill key={skill} name={skill} index={i} isGreen />)}
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>

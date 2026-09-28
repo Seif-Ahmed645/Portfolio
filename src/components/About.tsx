@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { ArrowRight, Database, Code2, FileText, Presentation, Linkedin, FileOutput, Heart, Clock } from 'lucide-react';
 import { SectionHeading } from '@/components/SectionHeading';
@@ -35,14 +36,12 @@ export function About() {
           title={<>Get to know <span className="text-gradient-vc neon-text-glow">Seif</span></>}
         />
 
-        {/* Unified narrative block */}
         <TiltCard className="mt-12 rounded-3xl glass-strong border border-violet-500/10 p-8 sm:p-10 lg:p-12 relative overflow-hidden">
           <div className="absolute inset-0 dot-overlay opacity-20 pointer-events-none" />
           <div className="absolute -top-16 -right-16 h-48 w-48 rounded-full bg-violet-500/8 blur-3xl pointer-events-none" />
           <div className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-coral-400/6 blur-3xl pointer-events-none" />
 
           <div className="relative">
-            {/* Quote mark */}
             <div className="text-6xl font-display font-extrabold text-violet-500/15 leading-none mb-4 select-none">"</div>
 
             <motion.p
@@ -53,29 +52,28 @@ export function About() {
               className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed font-light"
             >
               I am{' '}
-              <span className="font-semibold text-violet-400">Seif Ahmed Bahaa Eldein</span>, a Junior Data
+              <span className="font-semibold text-violet-400"  style={{ color: '#fb923c' }}>Seif Ahmed Bahaa Eldein</span>, a Junior Data
               Scientist and AI Enthusiast equipped with{' '}
-              <span className="font-semibold text-coral-400">3 months of hands-on industry experience</span>{' '}
+              <span className="font-semibold" style={{ color: '#fb923c' }}>3 months of hands-on industry experience</span>{' '}
               and high proficiency in SQL Server and PostgreSQL. Throughout my professional and technical
               journey, I have engineered real-world{' '}
               <span className="font-semibold text-violet-400">C++ desktop software applications</span>,
               including a Bank Management System and a Library Management System, applying advanced
               Object-Oriented Programming (OOP) principles and file handling techniques. Alongside my
               technical core, I deliver high-quality digital execution services — having crafted over{' '}
-              <span className="font-semibold text-coral-400">10 professional ATS-compliant CVs</span>,
+              <span className="font-semibold" style={{ color: '#fb923c' }}>10 professional ATS-compliant CVs</span>,
               designed{' '}
-              <span className="font-semibold text-coral-400">10+ technical presentations</span>, optimized
+              <span className="font-semibold text-coral-400" style={{ color: '#fb923c' }}>10+ technical presentations</span>, optimized
               multiple LinkedIn profiles, and converted complex PDF documents to Word formats with
               precision. I am a highly{' '}
-              <span className="font-semibold text-violet-400">dedicated and hardworking</span> junior
+              <span className="font-semibold text-violet-400"  style={{ color: '#fb923c' }}>dedicated and hardworking</span> junior
               professional who stays committed to every project until absolute completion, offering{' '}
-              <span className="font-semibold text-coral-400">24/7 availability</span> for seamless
+              <span className="font-semibold text-coral-400" style={{ color: '#fb923c' }}>24/7 availability</span> for seamless
               communication, updates, and support.
             </motion.p>
           </div>
         </TiltCard>
 
-        {/* Narrative stats grid */}
         <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {NARRATIVE_STATS.map((stat, i) => (
             <motion.div
@@ -94,7 +92,6 @@ export function About() {
           ))}
         </div>
 
-        {/* Traits + CTA */}
         <div className="mt-6 grid lg:grid-cols-5 gap-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -107,6 +104,7 @@ export function About() {
               <span className="h-px w-6 bg-violet-500" />
               Core Personal Traits
             </h3>
+
             <div className="grid sm:grid-cols-2 gap-3">
               {TRAITS.map((trait) => (
                 <div key={trait.label} className="flex items-center gap-3 rounded-xl glass border border-violet-500/10 p-4 hover:border-violet-500/30 transition-all duration-300 group">
@@ -122,13 +120,16 @@ export function About() {
           <TiltCard glow className="lg:col-span-2 rounded-2xl bg-gradient-to-br from-violet-500 to-coral-500 p-6 sm:p-8 flex flex-col justify-center overflow-hidden relative border-2 border-violet-500/20">
             <div className="absolute inset-0 dot-overlay opacity-20 pointer-events-none" />
             <div className="absolute -top-8 -right-8 h-32 w-32 rounded-full bg-white/15 blur-2xl pointer-events-none" />
+
             <div className="relative">
               <h3 className="font-display text-xl sm:text-2xl font-extrabold text-white leading-tight">
                 Have a project or opportunity in mind?
               </h3>
+
               <p className="mt-2 text-white/80 text-sm font-medium">
                 Let's work together and turn your ideas into reality.
               </p>
+
               <button
                 onClick={() => scrollTo('#contact')}
                 className="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-obsidian-900 text-violet-400 font-bold text-sm transition-all duration-300 hover:scale-105 hover:shadow-xl group/btn magnetic-btn"

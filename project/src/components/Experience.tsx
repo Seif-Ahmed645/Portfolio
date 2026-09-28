@@ -9,7 +9,7 @@ const EXPERIENCES = [
     org: 'Digital Egypt Pioneers Initiative (DEPI) – MCIT',
     period: '07/2026 – Ongoing',
     type: 'Internship / Scholarship',
-    description: 'Fully funded government scholarship covering Python, SQL, Data Analysis, and Machine Learning. Gaining hands-on experience with real-world datasets and industry-standard analytical workflows.',
+    description: 'Program Overview: Fully-funded national scholarship by MCIT targeting tech talents in AI and Data Science. Technical Track: Mastering Data Science, Python, SQL, Data Analysis, and Machine Learning algorithms through practical tasks. Non-Technical Track: Training in Freelancing, Career Coaching, Soft Skills, CV Writing, and LinkedIn Optimization. English Track: Enhancing professional English communication and technical reporting skills.',
     skills: ['Python', 'SQL', 'Data Analysis', 'Machine Learning'],
     icon: Database,
     accent: 'from-violet-400 to-violet-600',

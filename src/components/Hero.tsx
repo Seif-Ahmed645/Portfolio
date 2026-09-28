@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, Linkedin, Sparkles, FileText, GraduationCap, Database, Code2, ChevronDown } from 'lucide-react';
 
@@ -27,19 +28,24 @@ export function Hero() {
       <div className="absolute inset-0 grid-overlay opacity-30 pointer-events-none" />
       <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
 
-      {/* Ambient orbs - violet and coral */}
       <div className="ambient-orb w-80 h-80 bg-violet-500 top-1/4 -left-20 animate-orb-float" />
       <div className="ambient-orb w-96 h-96 bg-coral-400 bottom-1/4 -right-32 animate-orb-float" style={{ animationDelay: '3s' }} />
       <div className="ambient-orb w-64 h-64 bg-violet-500 top-1/2 left-1/3 animate-orb-float" style={{ animationDelay: '5s' }} />
 
       <div className="container-mw px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left: Content */}
           <div className="lg:col-span-7 order-2 lg:order-1">
-            <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-violet-500/20 mb-6">
-                <Sparkles className="h-3.5 w-3.5 text-coral-400" />
-                <span className="text-xs font-semibold text-coral-400 font-mono tracking-wider">
+                <Sparkles className="h-3.5 w-3.5" />
+                <span
+                  className="text-xs font-semibold font-mono tracking-wider"
+                  style={{ color: '#5F2E1B' }}
+                >
                   AVAILABLE FOR PROJECTS
                 </span>
               </div>
@@ -100,14 +106,16 @@ export function Hero() {
                 Explore My Work
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
+
               <a
-                href="/Seif_Ahmed_CV.pdf"
+                href="/Portfolio/Seif_Ahmed_CV.pdf"
                 download
                 className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-xl glass border border-violet-500/20 hover:border-violet-500/50 text-violet-400 font-bold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-violet-500/15 magnetic-btn"
               >
                 <Download className="h-4 w-4 group-hover:translate-y-0.5 transition-transform duration-300" />
                 Download CV
               </a>
+
               <a
                 href="https://linkedin.com/in/seifahmed1"
                 target="_blank"
@@ -139,7 +147,6 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right: Profile image */}
           <div className="lg:col-span-5 order-1 lg:order-2 relative">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -152,11 +159,16 @@ export function Hero() {
 
               <div className="relative rounded-[2rem] overflow-hidden neon-border animate-pulse-glow">
                 <div className="aspect-[4/5] bg-obsidian-850 overflow-hidden">
-                  <img src={PROFILE_IMAGE} alt="Seif Ahmed Bahaa Eldein" className="w-full h-full object-cover object-center" loading="eager" />
+                  <img
+                    src={PROFILE_IMAGE}
+                    alt="Seif Ahmed Bahaa Eldein"
+                    className="w-full h-full object-cover object-center"
+                    loading="eager"
+                  />
                 </div>
+
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian-900 via-obsidian-900/20 to-transparent pointer-events-none" />
 
-                {/* Corner accents */}
                 <div className="absolute top-3 left-3 h-6 w-6 border-t-2 border-l-2 border-violet-500/50 rounded-tl-lg pointer-events-none" />
                 <div className="absolute top-3 right-3 h-6 w-6 border-t-2 border-r-2 border-coral-400/50 rounded-tr-lg pointer-events-none" />
                 <div className="absolute bottom-3 left-3 h-6 w-6 border-b-2 border-l-2 border-coral-400/50 rounded-bl-lg pointer-events-none" />
@@ -166,7 +178,7 @@ export function Hero() {
                   <div className="glass-strong rounded-xl px-4 py-3 flex items-center justify-between border border-violet-500/10">
                     <div>
                       <div className="text-sm font-bold text-white-primary">Seif Ahmed Bahaa Eldein</div>
-                      <div className="text-xs text-slate-400">Junior Data Scientist & AI Enthusiast</div>
+                      <div className="text-xs text-slate-400">Junior Data Scientist &amp; AI Enthusiast</div>
                     </div>
                     <div className="h-2.5 w-2.5 rounded-full bg-green-400 animate-pulse shrink-0 shadow-lg shadow-green-400/50" />
                   </div>
