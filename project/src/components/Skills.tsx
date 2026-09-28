@@ -1,20 +1,18 @@
 import { motion } from 'framer-motion';
-import { Code2, Users, Globe } from 'lucide-react';
+import { Code2, Users } from 'lucide-react';
 import { SectionHeading } from '@/components/SectionHeading';
 
-const TECH_SKILLS = ['Python', 'SQL', 'C++', 'Java', 'C', 'HTML', 'CSS', 'JavaScript', 'Git', 'GitHub', 'OOP', 'Data Structures', 'Databases'];
-const SOFT_SKILLS = ['Teamwork', 'Problem Solving', 'Time Management', 'Communication', 'CV Writing', 'LinkedIn Optimization'];
-const LANGUAGES = ['Arabic (Native)', 'English (B1)', 'German (A1)'];
+const TECH_SKILLS = [
+  'Python', 'SQL', 'C++', 'Java', 'C', 'HTML', 'CSS', 
+  'JavaScript', 'Git', 'GitHub', 'OOP', 'Data Structures', 'Databases'
+];
 
-function SkillPill({ name, index, variant = 'violet' }: { name: string; index: number; variant?: 'violet' | 'coral' | 'blue' }) {
-  const styles = {
-    violet: { dot: 'bg-violet-500/40 group-hover:bg-violet-400', text: 'group-hover:text-violet-400', border: undefined },
-    coral: { dot: 'bg-coral-400/50 group-hover:bg-coral-400', text: 'group-hover:text-coral-400', border: { borderColor: 'rgba(251,146,60,0.1)' } },
-    blue: { dot: 'bg-blue-400/50 group-hover:bg-blue-400', text: 'group-hover:text-blue-400', border: { borderColor: 'rgba(59,130,246,0.1)' } },
-  };
+const SOFT_SKILLS = [
+  'Teamwork', 'Problem Solving', 'Time Management', 
+  'Communication', 'CV Writing', 'LinkedIn Optimization'
+];
 
-  const current = styles[variant];
-
+function SkillPill({ name, index, isCoral }: { name: string; index: number; isCoral?: boolean }) {
   return (
     <motion.span
       initial={{ opacity: 0, scale: 0.8 }}
@@ -22,10 +20,10 @@ function SkillPill({ name, index, variant = 'violet' }: { name: string; index: n
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
       className="group relative inline-flex items-center gap-2 px-4 py-2.5 rounded-xl glass border border-violet-500/10 text-sm font-medium text-slate-400 hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-default"
-      style={current.border}
+      style={isCoral ? { borderColor: 'rgba(251,146,60,0.1)' } : undefined}
     >
-      <span className={`h-1.5 w-1.5 rounded-full ${current.dot} transition-colors duration-300`} />
-      <span className={`${current.text} transition-colors duration-300`}>{name}</span>
+      <span className={`h-1.5 w-1.5 rounded-full ${isCoral ? 'bg-coral-400/50 group-hover:bg-coral-400' : 'bg-violet-500/40 group-hover:bg-violet-400'} transition-colors duration-300`} />
+      <span className={`group-hover:${isCoral ? 'text-coral-400' : 'text-violet-400'} transition-colors duration-300`}>{name}</span>
     </motion.span>
   );
 }
@@ -41,79 +39,55 @@ export function Skills() {
         <SectionHeading
           eyebrow="Skills & Expertise"
           title={<>Skills & <span className="text-gradient-vc neon-text-glow">Tech Matrix</span></>}
-          subtitle="A comprehensive toolkit spanning programming, data, languages, and professional services — continuously growing."
+          subtitle="A comprehensive toolkit spanning programming, data, and professional services — continuously growing."
         />
 
-        <div className="mt-16 grid lg:grid-cols-3 gap-6">
-          {/* Technical Stack */}
+        <div className="mt-16 grid lg:grid-cols-2 gap-6">
+          {/* Technical Stack Card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-2xl glass-strong border border-violet-500/10 p-6 sm:p-8 flex flex-col justify-between"
+            className="rounded-2xl glass-strong border border-violet-500/10 p-6 sm:p-8"
           >
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-11 w-11 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
-                  <Code2 className="h-5 w-5 text-violet-400" />
-                </div>
-                <div>
-                  <h3 className="font-display text-lg font-bold text-white-primary">Technical Stack</h3>
-                  <p className="text-xs text-slate-500 font-mono">// programming, data & tools</p>
-                </div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-11 w-11 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
+                <Code2 className="h-5 w-5 text-violet-400" />
               </div>
-              <div className="flex flex-wrap gap-2.5">
-                {TECH_SKILLS.map((skill, i) => <SkillPill key={skill} name={skill} index={i} variant="violet" />)}
+              <div>
+                <h3 className="font-display text-lg font-bold text-white-primary">Technical Stack</h3>
+                <p className="text-xs text-slate-500 font-mono">// programming, data & tools</p>
               </div>
+            </div>
+            <div className="flex flex-wrap gap-2.5">
+              {TECH_SKILLS.map((skill, i) => (
+                <SkillPill key={skill} name={skill} index={i} />
+              ))}
             </div>
           </motion.div>
 
-          {/* Soft & Professional */}
+          {/* Soft Capabilities Card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="rounded-2xl glass-strong border border-violet-500/10 p-6 sm:p-8 flex flex-col justify-between"
+            className="rounded-2xl glass-strong border border-violet-500/10 p-6 sm:p-8"
           >
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-11 w-11 rounded-xl bg-coral-400/10 border border-coral-400/20 flex items-center justify-center">
-                  <Users className="h-5 w-5 text-coral-400" />
-                </div>
-                <div>
-                  <h3 className="font-display text-lg font-bold text-white-primary">Soft Capabilities</h3>
-                  <p className="text-xs text-slate-500 font-mono">// communication & services</p>
-                </div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-11 w-11 rounded-xl bg-coral-400/10 border border-coral-400/20 flex items-center justify-center">
+                <Users className="h-5 w-5 text-coral-400" />
               </div>
-              <div className="flex flex-wrap gap-2.5">
-                {SOFT_SKILLS.map((skill, i) => <SkillPill key={skill} name={skill} index={i} variant="coral" />)}
+              <div>
+                <h3 className="font-display text-lg font-bold text-white-primary">Soft & Professional Capabilities</h3>
+                <p className="text-xs text-slate-500 font-mono">// communication & professional services</p>
               </div>
             </div>
-          </motion.div>
-
-          {/* Languages */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-2xl glass-strong border border-violet-500/10 p-6 sm:p-8 flex flex-col justify-between"
-          >
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-11 w-11 rounded-xl bg-blue-400/10 border border-blue-400/20 flex items-center justify-center">
-                  <Globe className="h-5 w-5 text-blue-400" />
-                </div>
-                <div>
-                  <h3 className="font-display text-lg font-bold text-white-primary">Languages</h3>
-                  <p className="text-xs text-slate-500 font-mono">// spoken proficiencies</p>
-                </div>
-              </div>
-              <div className="flex flex-wrap gap-2.5">
-                {LANGUAGES.map((lang, i) => <SkillPill key={lang} name={lang} index={i} variant="blue" />)}
-              </div>
+            <div className="flex flex-wrap gap-2.5">
+              {SOFT_SKILLS.map((skill, i) => (
+                <SkillPill key={skill} name={skill} index={i} isCoral />
+              ))}
             </div>
           </motion.div>
         </div>
