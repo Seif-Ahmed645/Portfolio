@@ -1,8 +1,28 @@
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Database, Code2, FileText, Presentation, Linkedin, FileOutput, Heart, Clock } from 'lucide-react';
+import {
+  ArrowRight,
+  Database,
+  Code2,
+  FileText,
+  Presentation,
+  Linkedin,
+  FileOutput,
+  Heart,
+  Clock,
+} from 'lucide-react';
 import { SectionHeading } from '@/components/SectionHeading';
 import { TiltCard } from '@/components/TiltCard';
+
+const ACCENT = '#D98A6D';
+const ACCENT_LIGHT = '#E8C9BE';
+
+const accentGradient = {
+  backgroundImage: `linear-gradient(90deg, ${ACCENT} 0%, ${ACCENT_LIGHT} 100%)`,
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+  backgroundClip: 'text',
+} as const;
 
 const NARRATIVE_STATS = [
   { icon: Database, label: 'SQL Server & PostgreSQL', color: 'violet' as const },
@@ -22,27 +42,42 @@ const TRAITS = [
 
 export function About() {
   const scrollTo = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector(href)?.scrollIntoView({
+      behavior: 'smooth',
+    });
   };
 
   return (
     <section id="about" className="section-pad relative overflow-hidden">
       <div className="ambient-orb w-72 h-72 bg-violet-500 top-1/3 -right-20 animate-orb-float" />
-      <div className="ambient-orb w-56 h-56 bg-coral-400 bottom-1/4 -left-16 animate-orb-float" style={{ animationDelay: '4s' }} />
+
+      <div
+        className="ambient-orb w-56 h-56 bg-coral-400 bottom-1/4 -left-16 animate-orb-float"
+        style={{ animationDelay: '4s' }}
+      />
 
       <div className="container-mw relative z-10">
         <SectionHeading
           eyebrow="About Me"
-          title={<>Get to know <span className="text-gradient-vc neon-text-glow">Seif</span></>}
+          title={
+            <>
+              Get to know{' '}
+              <span className="text-gradient-vc neon-text-glow">Seif</span>
+            </>
+          }
         />
 
         <TiltCard className="mt-12 rounded-3xl glass-strong border border-violet-500/10 p-8 sm:p-10 lg:p-12 relative overflow-hidden">
           <div className="absolute inset-0 dot-overlay opacity-20 pointer-events-none" />
+
           <div className="absolute -top-16 -right-16 h-48 w-48 rounded-full bg-violet-500/8 blur-3xl pointer-events-none" />
+
           <div className="absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-coral-400/6 blur-3xl pointer-events-none" />
 
           <div className="relative">
-            <div className="text-6xl font-display font-extrabold text-violet-500/15 leading-none mb-4 select-none">"</div>
+            <div className="text-6xl font-display font-extrabold text-violet-500/15 leading-none mb-4 select-none">
+              "
+            </div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -52,24 +87,41 @@ export function About() {
               className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed font-light"
             >
               I am{' '}
-              <span className="font-semibold text-violet-400"  style={{ color: '#fb923c' }}>Seif Ahmed Bahaa Eldein</span>, a Junior Data
-              Scientist and AI Enthusiast equipped with{' '}
-              <span className="font-semibold" style={{ color: '#fb923c' }}>3 months of hands-on industry experience</span>{' '}
-              and high proficiency in SQL Server and PostgreSQL. Throughout my professional and technical
-              journey, I have engineered real-world{' '}
-              <span className="font-semibold text-violet-400">C++ desktop software applications</span>,
-              including a Bank Management System and a Library Management System, applying advanced
-              Object-Oriented Programming (OOP) principles and file handling techniques. Alongside my
-              technical core, I deliver high-quality digital execution services — having crafted over{' '}
-              <span className="font-semibold" style={{ color: '#fb923c' }}>10 professional ATS-compliant CVs</span>,
-              designed{' '}
-              <span className="font-semibold text-coral-400" style={{ color: '#fb923c' }}>10+ technical presentations</span>, optimized
-              multiple LinkedIn profiles, and converted complex PDF documents to Word formats with
-              precision. I am a highly{' '}
-              <span className="font-semibold text-violet-400"  style={{ color: '#fb923c' }}>dedicated and hardworking</span> junior
-              professional who stays committed to every project until absolute completion, offering{' '}
-              <span className="font-semibold text-coral-400" style={{ color: '#fb923c' }}>24/7 availability</span> for seamless
-              communication, updates, and support.
+              <span className="font-semibold" style={accentGradient}>
+                Seif Ahmed
+              </span>
+              , a Junior Data Scientist and AI Enthusiast equipped with{' '}
+              <span className="font-semibold" style={accentGradient}>
+                3 months of hands-on industry experience
+              </span>{' '}
+              and high proficiency in SQL Server and PostgreSQL. Throughout my
+              professional and technical journey, I have engineered real-world{' '}
+              <span className="font-semibold" style={accentGradient}>
+                C++ desktop software applications
+              </span>
+              , including a Bank Management System and a Library Management
+              System, applying advanced Object-Oriented Programming (OOP)
+              principles and file handling techniques. Alongside my technical
+              core, I deliver high-quality digital execution services — having
+              crafted over{' '}
+              <span className="font-semibold" style={accentGradient}>
+                10 professional ATS-compliant CVs
+              </span>
+              , designed{' '}
+              <span className="font-semibold" style={accentGradient}>
+                10+ technical presentations
+              </span>
+              , optimized multiple LinkedIn profiles, and converted complex PDF
+              documents to Word formats with precision. I am a highly{' '}
+              <span className="font-semibold" style={accentGradient}>
+                dedicated and hardworking
+              </span>{' '}
+              junior professional who stays committed to every project until
+              absolute completion, offering{' '}
+              <span className="font-semibold" style={accentGradient}>
+                24/7 availability
+              </span>{' '}
+              for seamless communication, updates, and support.
             </motion.p>
           </div>
         </TiltCard>
@@ -84,10 +136,22 @@ export function About() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="flex items-center gap-3 rounded-xl glass border border-violet-500/10 p-4 hover:border-violet-500/30 transition-all duration-300 group"
             >
-              <div className={`h-10 w-10 rounded-lg flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 ${stat.color === 'violet' ? 'bg-violet-500/10 border border-violet-500/20' : 'bg-coral-400/10 border border-coral-400/20'}`}>
-                <stat.icon className={`h-4 w-4 ${stat.color === 'violet' ? 'text-violet-400' : 'text-coral-400'}`} />
+              <div
+                className="h-10 w-10 rounded-lg flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300"
+                style={{
+                  backgroundColor: `${ACCENT}15`,
+                  border: `1px solid ${ACCENT}35`,
+                }}
+              >
+                <stat.icon
+                  className="h-4 w-4"
+                  style={{ color: ACCENT }}
+                />
               </div>
-              <span className="text-sm font-medium text-slate-300">{stat.label}</span>
+
+              <span className="text-sm font-medium text-slate-300">
+                {stat.label}
+              </span>
             </motion.div>
           ))}
         </div>
@@ -107,18 +171,28 @@ export function About() {
 
             <div className="grid sm:grid-cols-2 gap-3">
               {TRAITS.map((trait) => (
-                <div key={trait.label} className="flex items-center gap-3 rounded-xl glass border border-violet-500/10 p-4 hover:border-violet-500/30 transition-all duration-300 group">
+                <div
+                  key={trait.label}
+                  className="flex items-center gap-3 rounded-xl glass border border-violet-500/10 p-4 hover:border-violet-500/30 transition-all duration-300 group"
+                >
                   <div className="h-9 w-9 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0">
                     <trait.icon className="h-4 w-4 text-violet-400" />
                   </div>
-                  <span className="text-sm font-medium text-slate-300">{trait.label}</span>
+
+                  <span className="text-sm font-medium text-slate-300">
+                    {trait.label}
+                  </span>
                 </div>
               ))}
             </div>
           </motion.div>
 
-          <TiltCard glow className="lg:col-span-2 rounded-2xl bg-gradient-to-br from-violet-500 to-coral-500 p-6 sm:p-8 flex flex-col justify-center overflow-hidden relative border-2 border-violet-500/20">
+          <TiltCard
+            glow
+            className="lg:col-span-2 rounded-2xl bg-gradient-to-br from-violet-500 to-coral-500 p-6 sm:p-8 flex flex-col justify-center overflow-hidden relative border-2 border-violet-500/20"
+          >
             <div className="absolute inset-0 dot-overlay opacity-20 pointer-events-none" />
+
             <div className="absolute -top-8 -right-8 h-32 w-32 rounded-full bg-white/15 blur-2xl pointer-events-none" />
 
             <div className="relative">
@@ -133,9 +207,13 @@ export function About() {
               <button
                 onClick={() => scrollTo('#contact')}
                 className="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-obsidian-900 text-violet-400 font-bold text-sm transition-all duration-300 hover:scale-105 hover:shadow-xl group/btn magnetic-btn"
-                style={{ backgroundColor: 'var(--bg-deep)', color: 'var(--accent-primary)' }}
+                style={{
+                  backgroundColor: 'var(--bg-deep)',
+                  color: 'var(--accent-primary)',
+                }}
               >
                 Let's Work Together
+
                 <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
               </button>
             </div>
