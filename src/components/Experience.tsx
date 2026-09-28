@@ -153,8 +153,7 @@ const EXPERIENCES: ExperienceItem[] = [
       },
       {
         title: 'Java Project',
-        description:
-          'Built a Tic-Tac-Toe (XO) game using Java.',
+        description: 'Built a Tic-Tac-Toe (XO) game using Java.',
         icon: FolderCode,
       },
     ],
@@ -170,7 +169,7 @@ function TopicTags({ items }: { items: string[] }) {
       {items.map((item) => (
         <span
           key={item}
-          className="rounded-lg border border-[#D9886A]/15 bg-[#D9886A]/[0.06] px-2.5 py-1.5 text-[11px] font-medium text-slate-300 transition-all duration-300 hover:border-[#D9886A]/40 hover:text-[#D9886A]"
+          className="rounded-lg border border-[#D9886A]/25 bg-[#D9886A]/[0.07] px-2.5 py-1.5 text-[11px] font-medium text-slate-700 transition-all duration-300 hover:border-[#D9886A]/50 hover:text-[#B96D50] dark:text-slate-300 dark:hover:text-[#D9886A]"
         >
           {item}
         </span>
@@ -188,24 +187,24 @@ function TrackDetails({ track }: { track: Track }) {
         {track.stages.map((stage) => (
           <div
             key={stage.title}
-            className="rounded-xl border border-white/[0.07] bg-black/20 p-3.5"
+            className="rounded-xl border border-slate-200 bg-slate-50 p-3.5 transition-colors duration-300 dark:border-white/[0.07] dark:bg-black/20"
           >
             <div className="mb-2 flex flex-wrap items-center gap-2">
-              <h5 className="text-sm font-semibold text-slate-200">
+              <h5 className="text-sm font-semibold text-slate-900 dark:text-slate-200">
                 {stage.title}
               </h5>
-              <span className="rounded-full border border-[#D9886A]/20 bg-[#D9886A]/[0.07] px-2.5 py-1 text-[10px] font-medium text-[#D9886A]">
+              <span className="rounded-full border border-[#D9886A]/25 bg-[#D9886A]/[0.08] px-2.5 py-1 text-[10px] font-medium text-[#B96D50] dark:text-[#D9886A]">
                 {stage.duration}
               </span>
             </div>
 
-            <p className="text-xs leading-6 text-slate-400 sm:text-sm">
+            <p className="text-xs leading-6 text-slate-600 sm:text-sm dark:text-slate-400">
               {stage.description}
             </p>
           </div>
         ))}
 
-        <div className="flex items-center gap-2 pt-1 text-xs text-slate-400">
+        <div className="flex items-center gap-2 pt-1 text-xs text-slate-600 dark:text-slate-400">
           <CheckCircle2 className="h-4 w-4 shrink-0 text-[#D9886A]" />
           Total duration: 5 months
         </div>
@@ -218,29 +217,29 @@ function TrackDetails({ track }: { track: Track }) {
       <div className="mt-4">
         {isTechnical && (
           <div className="mb-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-            <div className="flex items-start gap-3 rounded-xl border border-white/[0.07] bg-black/20 p-3.5">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#D9886A]/10 text-[#D9886A]">
+            <div className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3.5 dark:border-white/[0.07] dark:bg-black/20">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#D9886A]/10 text-[#B96D50] dark:text-[#D9886A]">
                 <Calendar className="h-4 w-4" />
               </div>
               <div>
-                <p className="text-xs font-semibold text-slate-200">
+                <p className="text-xs font-semibold text-slate-900 dark:text-slate-200">
                   Duration
                 </p>
-                <p className="mt-1 text-xs leading-5 text-slate-400">
+                <p className="mt-1 text-xs leading-5 text-slate-600 dark:text-slate-400">
                   Throughout the initiative.
                 </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-3 rounded-xl border border-white/[0.07] bg-black/20 p-3.5">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#D9886A]/10 text-[#D9886A]">
+            <div className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3.5 dark:border-white/[0.07] dark:bg-black/20">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#D9886A]/10 text-[#B96D50] dark:text-[#D9886A]">
                 <Users className="h-4 w-4" />
               </div>
               <div>
-                <p className="text-xs font-semibold text-slate-200">
+                <p className="text-xs font-semibold text-slate-900 dark:text-slate-200">
                   Practical Projects
                 </p>
-                <p className="mt-1 text-xs leading-5 text-slate-400">
+                <p className="mt-1 text-xs leading-5 text-slate-600 dark:text-slate-400">
                   Hands-on projects and offline sessions.
                 </p>
               </div>
@@ -249,7 +248,7 @@ function TrackDetails({ track }: { track: Track }) {
         )}
 
         {isTechnical && (
-          <p className="mb-2 text-xs font-semibold text-slate-300">
+          <p className="mb-2 text-xs font-semibold text-slate-700 dark:text-slate-300">
             Key Topics
           </p>
         )}
@@ -276,17 +275,19 @@ export function Experience() {
         <div className="mb-12">
           <div className="mb-3 flex items-center gap-2">
             <span className="h-px w-8 bg-[#D9886A]" />
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D9886A]">
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B96D50] dark:text-[#D9886A]">
               My Experience
             </span>
           </div>
 
-          <h2 className="font-display text-3xl font-extrabold text-white-primary sm:text-4xl">
+          <h2 className="font-display text-3xl font-extrabold text-slate-900 sm:text-4xl dark:text-white">
             Experience &amp;{' '}
-            <span className="text-[#D9886A]">Training</span>
+            <span className="text-[#B96D50] dark:text-[#D9886A]">
+              Training
+            </span>
           </h2>
 
-          <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base dark:text-slate-400">
             My training and practical experience in programming, Data Science, and AI.
           </p>
         </div>
@@ -305,20 +306,20 @@ export function Experience() {
                   duration: 0.55,
                   delay: index * 0.12,
                 }}
-                className={`relative flex min-w-0 flex-col overflow-hidden rounded-2xl border bg-[#0b0d0e] p-5 transition-all duration-300 sm:p-7 ${
+                className={`relative flex min-w-0 flex-col overflow-hidden rounded-2xl border p-5 transition-all duration-300 sm:p-7 ${
                   isRoute
-                    ? 'border-[#D9886A]/20 hover:border-[#D9886A]/50'
-                    : 'border-white/10 hover:border-[#D9886A]/30'
-                }`}
+                    ? 'border-[#D9886A]/30 hover:border-[#D9886A]/60'
+                    : 'border-slate-200 hover:border-[#D9886A]/40 dark:border-white/10 dark:hover:border-[#D9886A]/30'
+                } bg-white shadow-lg shadow-slate-900/[0.04] dark:bg-[#0b0d0e] dark:shadow-none`}
               >
-                <div className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-[#D9886A]/[0.05] blur-3xl" />
+                <div className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-[#D9886A]/[0.06] blur-3xl" />
 
                 <div className="relative flex items-start gap-4">
                   <div
                     className={`flex h-[76px] w-[76px] shrink-0 items-center justify-center overflow-hidden rounded-2xl border p-1 transition-all duration-300 sm:h-[84px] sm:w-[84px] ${
                       isRoute
-                        ? 'border-[#D9886A]/25 bg-[#0b0d0e]'
-                        : 'border-white/10 bg-white'
+                        ? 'border-[#D9886A]/25 bg-slate-50 dark:bg-[#0b0d0e]'
+                        : 'border-slate-200 bg-white dark:border-white/10'
                     }`}
                   >
                     <img
@@ -337,43 +338,43 @@ export function Experience() {
 
                   <div className="min-w-0 flex-1">
                     <div className="mb-2 flex flex-wrap items-center gap-2">
-                      <span className="rounded-full border border-[#D9886A]/25 bg-[#D9886A]/[0.07] px-2.5 py-1 text-[10px] font-medium text-[#D9886A] sm:text-xs">
+                      <span className="rounded-full border border-[#D9886A]/25 bg-[#D9886A]/[0.07] px-2.5 py-1 text-[10px] font-medium text-[#B96D50] sm:text-xs dark:text-[#D9886A]">
                         {exp.type}
                       </span>
 
                       {exp.ongoing && (
-                        <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-medium text-emerald-400 sm:text-xs">
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-medium text-emerald-700 sm:text-xs dark:text-emerald-400">
                           <span className="relative flex h-1.5 w-1.5">
                             <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70" />
-                            <span className="relative h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                            <span className="relative h-1.5 w-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
                           </span>
                           Ongoing
                         </span>
                       )}
                     </div>
 
-                    <h3 className="font-display text-lg font-bold leading-snug text-white-primary sm:text-xl">
+                    <h3 className="font-display text-lg font-bold leading-snug text-slate-900 sm:text-xl dark:text-white">
                       {exp.role}
                     </h3>
 
-                    <p className="mt-1.5 text-sm font-medium leading-6 text-[#D9886A]">
+                    <p className="mt-1.5 text-sm font-medium leading-6 text-[#B96D50] dark:text-[#D9886A]">
                       {exp.org}
                     </p>
 
-                    <div className="mt-2 flex items-center gap-1.5 text-xs text-slate-500">
-                      <Calendar className="h-3.5 w-3.5 shrink-0" />
+                    <div className="mt-2 flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-400">
+                      <Calendar className="h-3.5 w-3.5 shrink-0 text-[#D9886A]" />
                       <span>{exp.period}</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="relative mt-7">
-                  <h4 className="mb-2 flex items-center gap-2 text-sm font-bold text-slate-200">
+                  <h4 className="mb-2 flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-slate-200">
                     <BriefcaseBusiness className="h-4 w-4 text-[#D9886A]" />
                     Overview
                   </h4>
 
-                  <p className="text-sm leading-6 text-slate-400">
+                  <p className="text-sm leading-6 text-slate-600 dark:text-slate-400">
                     {exp.overview}
                   </p>
                 </div>
@@ -385,19 +386,19 @@ export function Experience() {
                     return (
                       <div
                         key={track.title}
-                        className="rounded-xl border border-white/[0.09] bg-white/[0.015] p-3.5 transition-all duration-300 hover:border-[#D9886A]/25 hover:bg-[#D9886A]/[0.025] sm:p-4"
+                        className="rounded-xl border border-slate-200 bg-slate-50 p-3.5 transition-all duration-300 hover:border-[#D9886A]/40 hover:bg-[#D9886A]/[0.025] sm:p-4 dark:border-white/[0.09] dark:bg-white/[0.015] dark:hover:border-[#D9886A]/25"
                       >
                         <div className="flex items-start gap-3">
-                          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[#D9886A]/20 bg-[#D9886A]/[0.08]">
-                            <Icon className="h-4 w-4 text-[#D9886A]" />
+                          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[#D9886A]/25 bg-[#D9886A]/[0.08]">
+                            <Icon className="h-4 w-4 text-[#B96D50] dark:text-[#D9886A]" />
                           </div>
 
                           <div className="min-w-0 flex-1">
-                            <h4 className="text-sm font-semibold leading-5 text-slate-200">
+                            <h4 className="text-sm font-semibold leading-5 text-slate-900 dark:text-slate-200">
                               {track.title}
                             </h4>
 
-                            <p className="mt-2 text-xs leading-6 text-slate-400 sm:text-sm">
+                            <p className="mt-2 text-xs leading-6 text-slate-600 sm:text-sm dark:text-slate-400">
                               {track.description}
                             </p>
                           </div>
@@ -409,11 +410,11 @@ export function Experience() {
                   })}
                 </div>
 
-                <div className="relative mt-6 flex flex-wrap gap-2 border-t border-white/[0.08] pt-5">
+                <div className="relative mt-6 flex flex-wrap gap-2 border-t border-slate-200 pt-5 dark:border-white/[0.08]">
                   {exp.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[11px] font-medium text-slate-400 transition-colors hover:border-[#D9886A]/30 hover:text-[#D9886A]"
+                      className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-[11px] font-medium text-slate-700 transition-colors hover:border-[#D9886A]/40 hover:text-[#B96D50] dark:border-white/10 dark:bg-white/[0.03] dark:text-slate-400 dark:hover:text-[#D9886A]"
                     >
                       {skill}
                     </span>
