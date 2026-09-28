@@ -21,13 +21,13 @@ const CATEGORIES = [
 ];
 
 const ITEMS: GalleryItem[] = [
-  { title: 'ATS CV Sample 1', category: 'CVs', image: '/cv_sample_1.jpg', icon: FileText, accent: 'violet' },
-  { title: 'ATS CV Sample 2', category: 'CVs', image: '/cv_sample_2.jpg', icon: FileText, accent: 'violet' },
-  { title: 'ATS CV Sample 3', category: 'CVs', image: '/cv_sample_3.jpg', icon: FileText, accent: 'violet' },
-  { title: 'Presentation Design 1', category: 'Presentations', image: '/presentation_sample_1.jpg', icon: Presentation, accent: 'coral' },
-  { title: 'Presentation Design 2', category: 'Presentations', image: '/presentation_sample_2.jpg', icon: Presentation, accent: 'coral' },
-  { title: 'LinkedIn Optimization', category: 'LinkedIn', image: '/linkedin_sample_1.jpg', icon: Linkedin, accent: 'violet' },
-  { title: 'PDF to Word Conversion', category: 'PDF', image: '/pdf_conversion_sample_1.jpg', icon: FileOutput, accent: 'coral' },
+  { title: 'ATS CV Sample 1', category: 'CVs', image: '/Portfolio/cv_sample_1.jpg', icon: FileText, accent: 'violet' },
+  { title: 'ATS CV Sample 2', category: 'CVs', image: '/Portfolio/cv_sample_2.jpg', icon: FileText, accent: 'violet' },
+  { title: 'ATS CV Sample 3', category: 'CVs', image: '/Portfolio/cv_sample_3.jpg', icon: FileText, accent: 'violet' },
+  { title: 'Presentation Design 1', category: 'Presentations', image: '/Portfolio/presentation_sample_1.jpg', icon: Presentation, accent: 'coral' },
+  { title: 'Presentation Design 2', category: 'Presentations', image: '/Portfolio/presentation_sample_2.jpg', icon: Presentation, accent: 'coral' },
+  { title: 'LinkedIn Optimization', category: 'LinkedIn', image: '/Portfolio/linkedin_sample_1.jpg', icon: Linkedin, accent: 'violet' },
+  { title: 'PDF to Word Conversion', category: 'PDF', image: '/Portfolio/pdf_conversion_sample_1.jpg', icon: FileOutput, accent: 'coral' },
 ];
 
 export function ServicesGallery() {

@@ -8,7 +8,7 @@ const BADGES = [
   { icon: GraduationCap, label: '3.25 GPA — Capital University', position: 'bottom' as const },
 ];
 
-const PROFILE_IMAGE = '/profile.jpg';
+const PROFILE_IMAGE = '/Portfolio/profile.jpg';
 
 const STATS = [
   { icon: Database, value: '3+', label: 'Months Experience' },
