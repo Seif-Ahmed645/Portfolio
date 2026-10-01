@@ -1,12 +1,21 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Award, Eye, GraduationCap, Database, Globe, Calendar } from 'lucide-react';
+import { Award, Eye, GraduationCap, Database, Globe, Calendar, Code2 } from 'lucide-react';
 import { SectionHeading } from '@/components/SectionHeading';
 import { TiltCard } from '@/components/TiltCard';
 import { Lightbox } from '@/components/Lightbox';
 
 const CERTIFICATES = [
+  {
+    title: 'Python for Data Science, AI & Development',
+    org: 'Coursera / IBM',
+    period: '2025',
+    description: 'Python, SQL, Data Analysis, Machine Learning, Jupyter',
+    image: '/Portfolio/Python for Data Science, AI & Development_certificate.jpg',
+    icon: Code2,
+    accent: 'from-violet-400 to-violet-600',
+    glow: 'rgba(139,92,246,0.15)',
+  },
   {
     title: 'Programming Fundamentals Diploma',
     org: 'Route Training Center',
